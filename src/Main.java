@@ -4,6 +4,7 @@ package src;
 
 class Potato {
   public int x, y, z;
+  public static int a = 0;
 
   public Potato() {
     // I wonder if cpp can do this? Just not this way probably
@@ -16,18 +17,21 @@ class Potato {
   }
   // Default code for every constructor
   {
+    Potato.a += 1;
     this.z = 99;
   }
 }
 
-class Main {
+public class Main {
 
   public static void main(String[] args) {
     // setting a ref to null tells the garbage collector to clean it
     Test test = new Test(7);
     meth(test); // so objects are passed by refernece
     Potato potato = new Potato();
-    System.out.printf("%d %d %d\n", potato.x, potato.y, potato.z);
+    Potato potatoOne = new Potato();
+    Potato potatoTwo = new Potato();
+    System.out.printf("%d %d %d\n%d\n", potato.x, potato.y, potato.z, Potato.a);
   }
 
   public static void meth(Test test) {
