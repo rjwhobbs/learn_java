@@ -16,7 +16,8 @@ public class DataStructure {
   public void printEven() {
       
       // Print out values of even indices of the array
-      // As EventIt is nested 'this' is needed
+      // As EventIt is nested 'this' is needed, turns out you can remove 'this' and it works
+      // I think it's more for being explicit
       DataStructureIterator iterator = this.new EvenIterator();
       while (iterator.hasNext()) {
           System.out.print(iterator.next() + " ");
